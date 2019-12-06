@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <title>Hello, world!</title>
+</head>
+<body>
+<div class="container-fluid" style="background-color: cornflowerblue">
+    <form role="form">
+        <div class="form-group">
+            <div class="panel panel-primary" style="margin: 20px">
+                <div class="panel-heading">
+                    <h3 class="panel-title">html2doc</h3>
+                </div>
+                <div class="panel-body">
+                    <label for="htmlContent"></label>
+                    <textarea style="..." id="htmlContent" class="form-control">
+                    </textarea>
+                </div>
+            </div>
+        </div>
+        <div class="form-group" style="text-align: center; display: flex; justify-content: center; align-items: center">
+
+        </div>
+        <div class="form-group">
+            <button style="display: block; margin: 0 auto" type="button" class="btn btn-primary btn-lg" onclick="html2doc()">
+                <span class="qlyphicon qlyphicon"></span>Click
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+
+    function html2doc() {
+        $.ajax({
+            type:"post",
+            url:"up",
+            data:{
+                "title":"test20191206",
+                "content":$("#htmlContent").val()
+            },
+            success:function (data) {
+                window.location.href="to"
+            }
+        });
+    }
+</script>
+</body>
+</html>
